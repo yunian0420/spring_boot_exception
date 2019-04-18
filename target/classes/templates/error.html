@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Error Page</title>
+</head>
+<body>
+	<center>
+		<span th:text="'My Error Page'"></span>
+		<hr>
+		exception : <span th:text="${exception}"></span>
+		<hr>
+		error : <span th:text="${error}"></span>
+		<hr>
+		message : <span th:text="${message}"></span>
+		<hr>
+		timestamp : <span th:text="${timestamp}"></span>
+		<hr>
+		status : <span th:text="${status}"></span>
+		<hr>
+		<table border="1">
+			<tr>
+				<td th:text="'attribute name'"></td>
+			</tr>
+			<tr th:each="attr : ${#httpServletRequest.getAttributeNames()}">
+				<td th:text="${attr}"></td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>
